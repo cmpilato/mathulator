@@ -24,6 +24,8 @@ while True:
         print helpers.subtract(arg1, arg2)
     elif op == '+':
         print helpers.add(arg1, arg2)
+    elif op == '*':
+        print helpers.multiply(arg1, arg2)
     else:
         print "Unknown operator."
   
