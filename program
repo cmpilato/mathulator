@@ -39,6 +39,8 @@ while True:
         print helpers.add(arg1, arg2)
     elif op == '*':
         print helpers.multiply(arg1, arg2)
+    elif op == '/':
+        print helpers.divide(arg1, arg2)
     else:
         print "Unknown operator."
   
