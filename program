@@ -5,7 +5,11 @@ sys.path.insert(0, 'lib')
 import helpers
 
 while True:
-    input = raw_input("Enter a simple expression: ").strip()
+    try:
+        input = raw_input("Enter a simple expression: ").strip()
+    except KeyboardInterrupt:
+        print 
+        input = None
     if not input:
         break
     pieces = filter(None, input.split())
