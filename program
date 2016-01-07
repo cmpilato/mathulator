@@ -9,8 +9,13 @@ _re_integer = re.compile('^[0-9]+$')
 
 while True:
     try:
+<<<<<<< cd32f3f Further prompt tweaks.
         input = raw_input("Enter an expression (use spaces): ").strip()
     except KeyboardInterrupt:
+=======
+        input = raw_input("Enter a simple expression: ").strip()
+    except (KeyboardInterrupt, EOFError):
+>>>>>>> 551a23e Fix artf1003 by trapping EOFError, too.
         print 
         input = None
     if not input:
