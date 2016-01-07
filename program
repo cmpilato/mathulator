@@ -19,11 +19,17 @@ while True:
     if len(pieces) != 3:
         print "Bogus expression (wrong number of pieces)."
         continue
+    op = pieces[1]
+    float_needed = False
+    if (op in '/'):
+        float_needed = True
     arg1 = arg2 = None
     try:
         arg1 = pieces[0]
         arg2 = pieces[2]
-        if _re_integer.match(arg1) and _re_integer.match(arg2):
+        if not float_needed \
+           and _re_integer.match(arg1) \
+           and _re_integer.match(arg2):
             arg1 = int(arg1)
             arg2 = int(arg2)
         else:
@@ -32,7 +38,6 @@ while True:
     except:
         print "Non-numerical operands."
         continue
-    op = pieces[1]
     if op == '-':
         print helpers.subtract(arg1, arg2)
     elif op == '+':
