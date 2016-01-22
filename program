@@ -9,7 +9,7 @@ _re_integer = re.compile('^[0-9]+$')
 
 while True:
     try:
-        input = raw_input("Enter a simple expression: ").strip()
+        input = raw_input("Enter an expression: ").strip()
     except KeyboardInterrupt:
         print 
         input = None
