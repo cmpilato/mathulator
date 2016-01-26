@@ -12,3 +12,6 @@ def divide(x, y):
 
 def mod(x, y):
     return x % y
+
+def power(x, y):
+    return pow(x, y)
