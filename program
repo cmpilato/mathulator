@@ -48,8 +48,6 @@ while True:
         print helpers.divide(arg1, arg2)
     elif op == '%':
         print helpers.mod(arg1, arg2)
-    elif op == '^':
-        print helpers.power(arg1, arg2)
     else:
         print "Unknown operator."
   
