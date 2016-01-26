@@ -10,5 +10,5 @@ def multiply(x, y):
 def divide(x, y):
     return x / y
 
-def mod(x, y):
+def modulo(x, y):
     return x % y
