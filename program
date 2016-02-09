@@ -7,6 +7,7 @@ import helpers
 
 _re_integer = re.compile('^[0-9]+$')
 
+last_answer = None
 while True:
     try:
         input = raw_input("Enter an expression (use spaces): ").strip()
@@ -23,10 +24,16 @@ while True:
     float_needed = False
     if (op in '/'):
         float_needed = True
-    arg1 = arg2 = None
+    arg1 = pieces[0]
+    arg2 = pieces[2]
+    if (arg1 == '#' or arg2 == '#') and (last_answer is None):
+        print "Unable to use previous answer -- there is none!"
+        continue
+    if arg1 == '#':
+        arg1 = str(last_answer)
+    if arg2 == '#':
+        arg2 = str(last_answer)
     try:
-        arg1 = pieces[0]
-        arg2 = pieces[2]
         if not float_needed \
            and _re_integer.match(arg1) \
            and _re_integer.match(arg2):
@@ -38,18 +45,23 @@ while True:
     except:
         print "Non-numerical operands."
         continue
+    answer = None
     if op == '-':
-        print helpers.subtract(arg1, arg2)
+        answer = helpers.subtract(arg1, arg2)
     elif op == '+':
-        print helpers.add(arg1, arg2)
+        answer = helpers.add(arg1, arg2)
     elif op == '*':
-        print helpers.multiply(arg1, arg2)
+        answer = helpers.multiply(arg1, arg2)
     elif op == '/':
-        print helpers.divide(arg1, arg2)
+        answer = helpers.divide(arg1, arg2)
     elif op == '%':
-        print helpers.modulo(arg1, arg2)
+        ansewr = helpers.modulo(arg1, arg2)
     elif op == '^':
-        print helpers.power(arg1, arg2)
+        answer = helpers.power(arg1, arg2)
+
+    if answer is not None:
+        print answer
+        last_answer = answer
     else:
         print "Unknown operator."
   
