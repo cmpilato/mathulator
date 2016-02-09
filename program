@@ -24,10 +24,16 @@ while True:
     float_needed = False
     if (op in '/'):
         float_needed = True
-    arg1 = arg2 = None
+    arg1 = pieces[0]
+    arg2 = pieces[2]
+    if (arg1 == '#' or arg2 == '#') and (last_answer is None):
+        print "Unable to use previous answer -- there is none!"
+        continue
+    if arg1 == '#':
+        arg1 = str(last_answer)
+    if arg2 == '#':
+        arg2 = str(last_answer)
     try:
-        arg1 = pieces[0]
-        arg2 = pieces[2]
         if not float_needed \
            and _re_integer.match(arg1) \
            and _re_integer.match(arg2):
