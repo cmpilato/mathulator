@@ -12,6 +12,14 @@ two-input calculations:
 * modulo: 5 % 2 = 1
 * power: 5 ^ 2 = 25
 
+Interaction with the Mathmulator begins by invoking the tool.  Do this
+by running `program`.
+
+```
+$ ./program
+Enter an expression (use spaces): 
+```
+
 The Mathmulator also supports a very simple answer register feature.
 The character `#` may be used to refer to the most recent successful
 answer in the calculation:
