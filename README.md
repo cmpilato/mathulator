@@ -33,3 +33,16 @@ Enter an expression (use spaces): # ^ 2
 64
 Enter an expression (use spaces): 
 ```
+
+Be careful to obey the prescribed input format precisely.  You must
+include whitespace around the operator, or the parser will choke:
+
+```
+Enter an expression (use spaces): 3 +   5
+8
+Enter an expression (use spaces):   3    +   5    
+8
+Enter an expression (use spaces): 3 +5
+Bogus expression (wrong number of pieces).
+Enter an expression (use spaces): 
+```
