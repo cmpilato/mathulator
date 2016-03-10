@@ -20,6 +20,8 @@ $ ./program
 Enter an expression (use spaces): 
 ```
 
+(Note that on Windows, this process may be a bit more involved.)
+
 The Mathmulator also supports a very simple answer register feature.
 The character `#` may be used to refer to the most recent successful
 answer in the calculation:
