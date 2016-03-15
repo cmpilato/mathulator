@@ -1,3 +1,8 @@
+#
+# Copyright (c) 2015-2016 C. Michael Pilato
+# See LICENSE file for further details.
+#
+
 def add(x, y):
     return x + y
 

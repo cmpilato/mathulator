@@ -1,4 +1,8 @@
 #!/usr/bin/env python
+#
+# Copyright (c) 2015-2016 C. Michael Pilato
+# See LICENSE file for further details.
+#
 import sys
 import os
 import re
