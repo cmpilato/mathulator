@@ -50,4 +50,4 @@ Enter an expression (use spaces):
 License
 -------
 
-MIT License
+[The MIT License (MIT)](../LICENSE)
