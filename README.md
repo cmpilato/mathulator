@@ -46,3 +46,8 @@ Enter an expression (use spaces): 3 +5
 Bogus expression (wrong number of pieces).
 Enter an expression (use spaces): 
 ```
+
+License
+-------
+
+[The MIT License (MIT)](../LICENSE)
