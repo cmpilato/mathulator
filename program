@@ -14,13 +14,30 @@ _re_integer = re.compile('^[0-9]+$')
 last_answer = None
 while True:
     try:
-        input = raw_input("Enter an expression (use spaces): ").strip()
+        input = raw_input("Enter an expression (or 'help'): ").strip()
     except (KeyboardInterrupt, EOFError):
         print 
         input = None
     if not input:
         break
     pieces = filter(None, input.split())
+    if len(pieces) == 1 and pieces[0] == 'help':
+        sys.stdout.write("""\
+Enter two-operand mathmetical expressions at the prompt, using the
+form "OPERAND_1 OPERATOR OPERAND_2" (with spaces).  Supported
+operations are as follows:
+
+   +   addition
+   -   subtraction
+   *   multiplication
+   /   division
+   %   modulo
+   ^   power
+
+In place of a numeric operand, you may use the special character '#'
+to represent the value of the most recent valid numerical answer.
+""")
+        continue
     if len(pieces) != 3:
         print "Bogus expression (wrong number of pieces)."
         continue
