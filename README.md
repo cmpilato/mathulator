@@ -22,9 +22,9 @@ Enter an expression (use spaces):
 
 (Note that on Windows, this process may be a bit more involved.)
 
-Click [here](./USAGE.md) for usage information.
+Click [here](/ctf/code/git/projects.testproject/scm.Pull_Request_Test/file/USAGE.md) for usage information.
 
 License
 -------
 
-[The MIT License (MIT)](../LICENSE)
+[The MIT License (MIT)](/ctf/code/git/projects.testproject/scm.Pull_Request_Test/file/LICENSE)
