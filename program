@@ -74,15 +74,18 @@ to represent the value of the most recent valid numerical answer.
     elif op == '*':
         answer = helpers.multiply(arg1, arg2)
     elif op == '/':
-        answer = helpers.divide(arg1, arg2)
+        if arg2 == 0:
+            print "Division by zero is a no-no!"
+        else:
+            answer = helpers.divide(arg1, arg2)
     elif op == '%':
         answer = helpers.modulo(arg1, arg2)
     elif op == '^':
         answer = helpers.power(arg1, arg2)
-
+    else:
+        print "Unknown operator."
+        
     if answer is not None:
         print answer
         last_answer = answer
-    else:
-        print "Unknown operator."
   
