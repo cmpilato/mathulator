@@ -36,3 +36,11 @@ Enter an expression (use spaces): 3 +5
 Bogus expression (wrong number of pieces).
 Enter an expression (use spaces): 
 ```
+
+One exception to the operand-operator-operand required input is the
+support for calculator-style memory actions:
+
+* M+:  Add the value of the most recent successful calculation to the value stored in memory.
+* M-:  Subtract the value of the most recent successful calculation from the value stored in memory.
+* MC:  Clear the memory register (reset to 0).
+* MR:  Recall the memory register -- that is, print its value.
