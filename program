@@ -6,6 +6,7 @@
 import sys
 import os
 import re
+import math
 sys.path.insert(0, 'lib')
 import helpers
 
@@ -36,8 +37,12 @@ operations are as follows:
    %   modulo
    ^   power
 
-In place of a numeric operand, you may use the special character '#'
-to represent the value of the most recent valid numerical answer.
+In place of a numeric operand, you may use one of the following
+special characters:
+
+   #   the value of the most recent valid numerical answer
+   e   the mathematical constant e = 2.718281...
+   pi  the mathematical constant pi = 3.141592...
 
 Instead of an expression of this sort, you may also enter the
 following memory operation commands:
@@ -88,6 +93,14 @@ following memory operation commands:
         arg1 = str(last_answer)
     if arg2 == '#':
         arg2 = str(last_answer)
+    if arg1 == 'e':
+        arg1 = str(math.e)
+    if arg2 == 'e':
+        arg2 = str(math.e)
+    if arg1 == 'pi':
+        arg1 = str(math.pi)
+    if arg2 == 'pi':
+        arg2 = str(math.pi)
     try:
         if not float_needed \
            and _re_integer.match(arg1) \
