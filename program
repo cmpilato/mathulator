@@ -40,6 +40,7 @@ special characters:
 
    #   the value of the most recent valid numerical answer
    e   the mathematical constant e = 2.718281...
+   pi  the mathematical constant pi = 3.141592...
 
 """)
         continue
@@ -63,6 +64,10 @@ special characters:
         arg1 = str(math.e)
     if arg2 == 'e':
         arg2 = str(math.e)
+    if arg1 == 'pi':
+        arg1 = str(math.pi)
+    if arg2 == 'pi':
+        arg2 = str(math.pi)
     try:
         if not float_needed \
            and _re_integer.match(arg1) \
