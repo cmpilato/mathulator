@@ -13,6 +13,7 @@ import helpers
 _re_integer = re.compile('^[0-9]+$')
 
 last_answer = None
+memory_register = 0
 while True:
     try:
         input = raw_input("Enter an expression (or 'help'): ").strip()
@@ -22,8 +23,9 @@ while True:
     if not input:
         break
     pieces = filter(None, input.split())
-    if len(pieces) == 1 and pieces[0] == 'help':
-        sys.stdout.write("""\
+    if len(pieces) == 1:
+        if pieces[0] == 'help':
+            sys.stdout.write("""\
 Enter two-operand mathmetical expressions at the prompt, using the
 form "OPERAND_1 OPERATOR OPERAND_2" (with spaces).  Supported
 operations are as follows:
@@ -42,10 +44,41 @@ special characters:
    e   the mathematical constant e = 2.718281...
    pi  the mathematical constant pi = 3.141592...
 
+Instead of an expression of this sort, you may also enter the
+following memory operation commands:
+
+   M+  Add the value of the most recent successful calculation
+       to the value stored in memory.
+   M-  Subtract the value of the most recent successful calculation
+       from the value stored in memory.
+   MC  Clear the memory register (reset to 0).
+   MR  Recall the memory register -- that is, print its value.
+
 """)
-        continue
+            continue
+        elif pieces[0] == 'M+':
+            if last_answer is None:
+                print "Only valid when used after a successful calculation."
+                continue
+            memory_register += last_answer
+            print last_answer
+            continue
+        elif pieces[0] == 'M-':
+            if last_answer is None:
+                print "Only valid when used after a successful calculation."
+                continue
+            memory_register -= last_answer
+            print last_answer
+            continue
+        elif pieces[0] == 'MR':
+            print memory_register
+            continue
+        elif pieces[0] == 'MC':
+            memory_register = 0
+            print memory_register
+            continue
     if len(pieces) != 3:
-        print "Bogus expression (wrong number of pieces)."
+        print "Bogus expression."
         continue
     op = pieces[1]
     float_needed = False
@@ -88,15 +121,18 @@ special characters:
     elif op == '*':
         answer = helpers.multiply(arg1, arg2)
     elif op == '/':
-        answer = helpers.divide(arg1, arg2)
+        if arg2 == 0:
+            print "Division by zero is a no-no!"
+        else:
+            answer = helpers.divide(arg1, arg2)
     elif op == '%':
         answer = helpers.modulo(arg1, arg2)
     elif op == '^':
         answer = helpers.power(arg1, arg2)
-
+    else:
+        print "Unknown operator."
+        
     if answer is not None:
         print answer
         last_answer = answer
-    else:
-        print "Unknown operator."
   
