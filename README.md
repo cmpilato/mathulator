@@ -12,6 +12,9 @@ two-input calculations:
 * modulo: 5 % 2 = 1
 * power: 5 ^ 2 = 25
 
+Usage
+-----
+
 Interaction with the Mathmulator begins by invoking the tool.  Do this
 by running `program`.
 
