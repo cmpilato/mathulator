@@ -79,6 +79,8 @@ following commands:
             continue
         elif pieces[0] == 'q':
             break
+        elif pieces[0] == 'exit':
+            break
     if len(pieces) != 3:
         print "Bogus expression."
         continue
