@@ -44,3 +44,7 @@ support for calculator-style memory actions:
 * M-:  Subtract the value of the most recent successful calculation from the value stored in memory.
 * MC:  Clear the memory register (reset to 0).
 * MR:  Recall the memory register -- that is, print its value.
+
+Other miscellaneous commands which are supported include:
+
+* q:  Quit the program.
