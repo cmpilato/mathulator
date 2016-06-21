@@ -45,7 +45,7 @@ special characters:
    pi  the mathematical constant pi = 3.141592...
 
 Instead of an expression of this sort, you may also enter the
-following memory operation commands:
+following commands:
 
    M+  Add the value of the most recent successful calculation
        to the value stored in memory.
@@ -53,7 +53,7 @@ following memory operation commands:
        from the value stored in memory.
    MC  Clear the memory register (reset to 0).
    MR  Recall the memory register -- that is, print its value.
-
+   q   Quit the program.
 """)
             continue
         elif pieces[0].lower() == 'm+':
@@ -77,6 +77,8 @@ following memory operation commands:
             memory_register = 0
             print memory_register
             continue
+        elif pieces[0] == 'q':
+            break
     if len(pieces) != 3:
         print "Bogus expression."
         continue
