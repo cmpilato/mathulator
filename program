@@ -56,24 +56,24 @@ following memory operation commands:
 
 """)
             continue
-        elif pieces[0] == 'M+':
+        elif pieces[0].lower() == 'm+':
             if last_answer is None:
                 print "Only valid when used after a successful calculation."
                 continue
             memory_register += last_answer
             print last_answer
             continue
-        elif pieces[0] == 'M-':
+        elif pieces[0].lower() == 'm-':
             if last_answer is None:
                 print "Only valid when used after a successful calculation."
                 continue
             memory_register -= last_answer
             print last_answer
             continue
-        elif pieces[0] == 'MR':
+        elif pieces[0].lower() == 'mr':
             print memory_register
             continue
-        elif pieces[0] == 'MC':
+        elif pieces[0].lower() == 'mc':
             memory_register = 0
             print memory_register
             continue
