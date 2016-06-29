@@ -16,7 +16,7 @@ last_answer = None
 memory_register = 0
 while True:
     try:
-        input = raw_input("Enter an expression (or 'help'): ").strip()
+        input = raw_input(">>> ").strip()
     except (KeyboardInterrupt, EOFError):
         print 
         input = None
