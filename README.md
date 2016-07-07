@@ -10,7 +10,7 @@ two-input calculations:
 * multiplication: 5 * 2 = 10
 * division: 5 / 2 = 2.5
 * modulo: 5 % 2 = 1
-* power: 5 ^ 2 = 25
+* power (exponents): 5 ^ 2 = 25
 
 Usage
 -----
