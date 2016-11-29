@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015-2016 C. Michael Pilato
+# Copyright (c) 2015-2016 C. Michael Pilato et al.
 # See LICENSE file for further details.
 #
 
