@@ -36,6 +36,7 @@ operations are as follows:
    /   division
    %   modulo
    ^   power
+   &   logical AND (positive integral operands only)
 
 In place of a numeric operand, you may use one of the following
 special characters:
@@ -132,6 +133,14 @@ following memory operation commands (case matters not):
         answer = helpers.modulo(arg1, arg2)
     elif op == '^':
         answer = helpers.power(arg1, arg2)
+    elif op == '&':
+        if (isinstance(arg1, (int, long))
+            and isinstance(arg2, (int, long))
+            and arg1 >= 0
+            and arg2 >= 0):
+            answer = helpers.logicand(arg1, arg2)
+        else:
+            print "Operands must be non-negative integers"
     else:
         print "Unknown operator."
         
