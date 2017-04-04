@@ -12,6 +12,7 @@ two-input calculations:
 * modulo: 5 % 2 = 1
 * power (exponents): 5 ^ 2 = 25
 * logical AND: 5 & 6 = 4
+* logical OR: 5 | 6 = 7
 
 Usage
 -----

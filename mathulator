@@ -37,6 +37,7 @@ operations are as follows:
    %   modulo
    ^   power
    &   logical AND (non-negative integral operands only)
+   |   logical OR (non-negative integral operands only)
 
 In place of a numeric operand, you may use one of the following
 special characters:
@@ -139,6 +140,14 @@ following memory operation commands (case matters not):
             and arg1 >= 0
             and arg2 >= 0):
             answer = helpers.logicand(arg1, arg2)
+        else:
+            print "Operands must be non-negative integers"
+    elif op == '|':
+        if (isinstance(arg1, (int, long))
+            and isinstance(arg2, (int, long))
+            and arg1 >= 0
+            and arg2 >= 0):
+            answer = helpers.logicor(arg1, arg2)
         else:
             print "Operands must be non-negative integers"
     else:

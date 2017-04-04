@@ -23,3 +23,6 @@ def power(x, y):
 
 def logicand(x, y):
     return x & y
+
+def logicor(x, y):
+    return x | y
