@@ -36,7 +36,7 @@ operations are as follows:
    /   division
    %   modulo
    ^   power
-   &   logical AND (positive integral operands only)
+   &   logical AND (non-negative integral operands only)
 
 In place of a numeric operand, you may use one of the following
 special characters:
